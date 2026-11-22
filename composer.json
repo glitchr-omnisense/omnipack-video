@@ -1,9 +1,9 @@
 {
-    "name": "omnibase/video",
+    "name": "omnipack/video",
     "description": "A video platform on omnibase: videos and channels, resumable uploads through tusd, HLS transcoding with ffmpeg, a player that keeps playing across pages, views, likes, timed comments, playlists, subscriptions, reports, a members' studio, local suggestions (Gorse optional) and a Typesense index.",
     "type": "symfony-bundle",
     "license": "MIT",
-    "homepage": "https://github.com/glitchr-omnisense/omnibase-video",
+    "homepage": "https://github.com/glitchr-omnisense/omnipack-video",
     "authors": [
         {
             "name": "Marco Meyer",
@@ -11,8 +11,8 @@
         }
     ],
     "support": {
-        "source": "https://github.com/glitchr-omnisense/omnibase-video",
-        "issues": "https://github.com/glitchr-omnisense/omnibase-video/issues"
+        "source": "https://github.com/glitchr-omnisense/omnipack-video",
+        "issues": "https://github.com/glitchr-omnisense/omnipack-video/issues"
     },
     "require": {
         "php": "^8.2",
@@ -21,7 +21,7 @@
         "omnibridge/symfony": "^3.0",
         "omnisense/omnibase": "^7.0",
         "glitchr/typesense-bundle": "^2.0",
-        "omnibase/admin": "^2.0",
+        "omnipack/admin": "^2.0",
         "symfony/config": "^7.0|^8.0",
         "symfony/dependency-injection": "^7.0|^8.0",
         "symfony/form": "^7.0|^8.0",
@@ -38,6 +38,9 @@
         "omnibridge/eloquent": "^2.0",
         "phpunit/phpunit": "^11.0|^12.0",
         "symfony/clock": "^6.2|^7.0|^8.0"
+    },
+    "replace": {
+        "omnibase/video": "self.version"
     },
     "suggest": {
         "ffmpeg": "The ffmpeg and ffprobe binaries on the worker transcode the uploads (HLS fMP4, poster, storyboard).",

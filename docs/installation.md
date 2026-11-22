@@ -6,7 +6,7 @@ order: 10
 # Installation
 
 ```bash
-composer require omnibase/video
+composer require omnipack/video
 ```
 
 ```php

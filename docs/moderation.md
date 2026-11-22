@@ -17,7 +17,7 @@ mark as spam, trash (back office).
 
 "Signaler" under a film (and per comment) makes an omnibase `Complaint`
 (`source: video`, `location: video:<id>` / `comment:<id>`, the reason in
-its context): handled on omnibase/admin's screen for them.
+its context): handled on omnipack/admin's screen for them.
 
 ## Take-downs
 

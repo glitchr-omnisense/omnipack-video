@@ -34,15 +34,15 @@ sources" below).
   optional - down or absent, the local ones answer).
 - **Search** through `glitchr/typesense-bundle`, the database when the
   server is down.
-- **Back office** on omnibase/admin: films (take down with a reason),
+- **Back office** on omnipack/admin: films (take down with a reason),
   channels, comments, a dashboard tile.
 
 ```bash
-composer require omnibase/video
+composer require omnipack/video
 ```
 
 Stable releases follow semantic versioning: this installs the latest 2.x, with omnisense/omnibase 7.0 or later
-on Symfony (omnibridge/symfony) and Doctrine ORM (DoctrineBundle), omnibase/admin for the back office. No `minimum-stability` setting is needed.
+on Symfony (omnibridge/symfony) and Doctrine ORM (DoctrineBundle), omnipack/admin for the back office. No `minimum-stability` setting is needed.
 
 Under Symfony, register the bundle (and glitchr/typesense-bundle, which it requires) and its pages, then create its
 tables:

@@ -19,7 +19,7 @@ Inside a host application:
 php vendor/bin/phpunit -c vendor/omnibase/video/phpunit.xml.dist
 ```
 
-omnisense/omnibase-harness does not install omnibase/video, its
+omnisense/omnibase-harness does not install omnipack/video, its
 glitchr/typesense-bundle nor symfony/rate-limiter. Run there with the
 checkout and glitchr/typesense-bundle on the autoloader, the suite gives:
 
@@ -35,7 +35,7 @@ requirement of the bundle, so present in a host); the skipped test is
 
 | Test | Checks |
 |---|---|
-| `Controller\CrudRequiredFieldsTest` | omnibase/admin's `CrudFieldsTestCase` on the screens |
+| `Controller\CrudRequiredFieldsTest` | omnipack/admin's `CrudFieldsTestCase` on the screens |
 | `Css\WatchLayoutTest` | the stages row as tall as the player; a phone has one column and its own rows |
 | `Demo\VideoDemoAccountsTest` | one account for each of the platform's people; nobody reaches the super-admin; where the editors are above it, the moderator is left out; each account's label and sentence in the catalogues |
 | `Entity\PlaylistTest` | a list keeps its order and plays on; a film no longer reachable leaves it; "plus tard" is private and newest first; a sitting's seconds never run ahead of the clock |

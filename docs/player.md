@@ -61,7 +61,7 @@ module (`window.MediaPlay`, `bundles/base/js/media.js` - the dock links it; a
 site may also bundle it, `import '../vendor/omnisense/omnibase/assets/media/media.js'`):
 
 - it **joins** (`MediaPlay.join(VideoPlayer, pause)`): when anything else on
-  the page starts sounding - omnibase/music's bar, another player, a plain
+  the page starts sounding - omnipack/music's bar, another player, a plain
   `<audio>` or `<video>` - it pauses;
 - it **announces** itself when it starts
   (`MediaPlay.announce(VideoPlayer, {kind: 'video', id, source: 'video', element})`),
@@ -92,7 +92,7 @@ A `Source` of kind `embed` keeps the film's page address and its reference
 - `getPlatform()`, `getExternalId()` - and no logic. Until an engine is
 registered for its platform it plays in the platform's own frame
 (omnibase's `embed_url()`), loaded only once the visitor accepted the
-`EMBEDS` feature of omnibase/consent. Members add one by its link in the
+`EMBEDS` feature of omnipack/consent. Members add one by its link in the
 studio (`/studio/lien`).
 
 ## Beacons
