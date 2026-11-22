@@ -32,6 +32,12 @@ return function (ContainerConfigurator $configurator) {
             $src.'/VideoBundle.php',
         ]);
 
+    if (!class_exists('Typesense\\Bundle\\EventListener\\TypesenseIndexer')) {
+        // glitchr/typesense-bundle is suggested. Symfony keeps an excluded file as an abstract definition (tag
+        // container.excluded), whose class a compiler pass may load: this one cannot be, its parent is that bundle's.
+        $services->remove('Base\\Video\\Search\\SafeIndexer');
+    }
+
     $services->load('Base\\Video\\Controller\\Client\\', $src.'/Controller/Client/')
         ->tag('controller.service_arguments');
 

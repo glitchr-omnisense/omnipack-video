@@ -13,8 +13,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Base\Mapping as ORM;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Typesense\Bundle\ORM\Transformer\PropertyReader;
-use Typesense\Bundle\TypesenseInterface;
 
 /**
  * A film. An omnibase thread - its title, its description (the content),
@@ -36,7 +34,7 @@ use Typesense\Bundle\TypesenseInterface;
 #[ORM\Index(columns: ['processing'], name: 'video_processing_idx')]
 #[ORM\Index(columns: ['views'], name: 'video_views_idx')]
 #[DiscriminatorEntry(value: 'video')]
-class Video extends Thread implements LinkableInterface, TypesenseInterface
+class Video extends Thread implements LinkableInterface
 {
     public const PROCESSING_NONE = 'none';         // nothing to do: a remote or embedded film
     public const PROCESSING_UPLOADED = 'uploaded'; // the file is in, the transcoding is queued
@@ -68,15 +66,10 @@ class Video extends Thread implements LinkableInterface, TypesenseInterface
         }
     }
 
+    /** The film inside another's document (glitchr/typesense-bundle, suggested): its title. */
     public function __typesense(): ?string
     {
         return $this->getTitle();
-    }
-
-    /** What glitchr/typesense-bundle's TypesenseTrait did, deprecated since its 2.0: the bundle's own reader. */
-    public function __typesenseGetter(string $propertyName, array $propertyInfo): mixed
-    {
-        return PropertyReader::read($this, $propertyName, $propertyInfo);
     }
 
     #[ORM\ManyToOne(targetEntity: Channel::class, inversedBy: 'videos')]

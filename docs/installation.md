@@ -7,13 +7,18 @@ order: 10
 
 ```bash
 composer require omnipack/video
+composer require glitchr/typesense-bundle   # optional: the search on a Typesense server
 ```
 
 ```php
 // config/bundles.php
-Typesense\Bundle\TypesenseBundle::class => ['all' => true],
+Typesense\Bundle\TypesenseBundle::class => ['all' => true],   // with glitchr/typesense-bundle only
 Base\Video\VideoBundle::class => ['all' => true],
 ```
+
+glitchr/typesense-bundle is suggested, not required: without it (or without its "video" mapping) the database
+answers the search, and nothing is indexed. The persistence bridge (omnibridge/doctrine or omnibridge/eloquent)
+is the site's choice too.
 
 ```yaml
 # config/routes.yaml

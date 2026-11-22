@@ -20,7 +20,6 @@
         "doctrine/doctrine-bundle": "^2.11|^3.0",
         "omnibridge/symfony": "^3.0",
         "omnisense/omnibase": "^7.0",
-        "glitchr/typesense-bundle": "^2.0",
         "omnipack/admin": "^2.0",
         "symfony/config": "^7.0|^8.0",
         "symfony/dependency-injection": "^7.0|^8.0",
@@ -34,6 +33,7 @@
         "symfony/twig-bundle": "^7.0|^8.0"
     },
     "require-dev": {
+        "glitchr/typesense-bundle": "^2.0",
         "omnibridge/doctrine": "^3.0|^4.0",
         "omnibridge/eloquent": "^2.0",
         "phpunit/phpunit": "^11.0|^12.0",
@@ -43,6 +43,7 @@
         "omnibase/video": "self.version"
     },
     "suggest": {
+        "glitchr/typesense-bundle": "^2.0: the search on a Typesense server (the \"video\" mapping, docs/search.md); without it the database answers the search",
         "ffmpeg": "The ffmpeg and ffprobe binaries on the worker transcode the uploads (HLS fMP4, poster, storyboard).",
         "tusproject/tusd": "The resumable upload server the studio sends files to (docs/upload.md).",
         "gorse-io/gorse": "gorse-in-one, an optional recommender (video.suggest.provider: gorse); the local suggestions stay when it is down."
@@ -59,7 +60,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "2.x-dev"
+            "dev-main": "3.x-dev"
         }
     },
     "config": {

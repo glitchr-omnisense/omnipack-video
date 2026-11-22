@@ -41,15 +41,15 @@ sources" below).
 composer require omnipack/video
 ```
 
-Stable releases follow semantic versioning: this installs the latest 2.x, with omnisense/omnibase 7.0 or later
+Stable releases follow semantic versioning: this installs the latest 3.x, with omnisense/omnibase 7.0 or later
 on Symfony (omnibridge/symfony) and Doctrine ORM (DoctrineBundle), omnipack/admin for the back office. No `minimum-stability` setting is needed.
 
-Under Symfony, register the bundle (and glitchr/typesense-bundle, which it requires) and its pages, then create its
-tables:
+Under Symfony, register the bundle (and glitchr/typesense-bundle when it is installed: it is suggested, the
+database answers the search without it) and its pages, then create its tables:
 
 ```php
 // config/bundles.php
-Typesense\Bundle\TypesenseBundle::class => ['all' => true],
+Typesense\Bundle\TypesenseBundle::class => ['all' => true],   // optional
 Base\Video\VideoBundle::class => ['all' => true],
 ```
 

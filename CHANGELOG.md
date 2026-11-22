@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.0.0
+
+The bundle presumes no provider: glitchr/typesense-bundle, the search server, is suggested.
+
+### Changed
+
+- `glitchr/typesense-bundle` moves from `require` to `suggest` (and `require-dev`). Without it the bundle boots,
+  `Search\SafeIndexer` is not registered and the database answers the search (as when Typesense is down).
+- `Entity\Video` no longer implements `Typesense\Bundle\TypesenseInterface` and has no `__typesenseGetter()`: the
+  bundle indexes it through its mapping, its fields read by its own reader (optional since typesense-bundle 2.0;
+  the document is the same). `__typesense()` stays, the film's title inside another's document.
+
+### Added
+
+- `tests/Kernel/WithoutSuggestedPackagesTest`: the bundle boots without glitchr/typesense-bundle.
+
 ## 2.0.0
 
 omnibase/video is a video platform on omnisense/omnibase: members send their films and the platform runs them, visitors
